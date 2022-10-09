@@ -11,10 +11,11 @@ const DEBOUNCE_DELAY = 300;
 
 refs.inputEl.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
-function onInput({ target: { value } }) {
+function onInput(e) {
   clearMarkup();
   showLoader();
-  trimmedValue = value.trim();
+  trimmedValue = e.target.value.trim();
+  console.log(trimmedValue);
 
   if (!trimmedValue) {
     Notify.warning('Please, specify country');
