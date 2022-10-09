@@ -14,7 +14,7 @@ refs.inputEl.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 function onInput(e) {
   clearMarkup();
   showLoader();
-  trimmedValue = e.target.value.trim();
+  const trimmedValue = e.target.value.trim();
   console.log(trimmedValue);
 
   if (!trimmedValue) {
